@@ -33,9 +33,7 @@ public class MainActivity extends AppCompatActivity
 
     private CaptureRequest.Builder mBuilder;
 
-
-    private ToggleButton toggleButton;
-    private boolean flashState = false;
+    private boolean flashState = true;
 
 
 
@@ -45,32 +43,28 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
-
         initCamera();
 
     }
 
     public void click(View v)
     {
-       boolean flashAvailable = cameraCharacteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
-        if (v.getId() == R.id.toggleButton) {
-            if (flashState) {
-                try {
-                    turnOnFlashLight();
-                    flashState = false;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-           } else {
-                try {
-                    turnOffFlashLight();
-                    flashState = true;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        if (flashState) {
+            try {
+                turnOnFlashLight();
+                flashState = false;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+       } else {
+            try {
+                turnOffFlashLight();
+                flashState = true;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
+
     }
 
     private void initCamera()
