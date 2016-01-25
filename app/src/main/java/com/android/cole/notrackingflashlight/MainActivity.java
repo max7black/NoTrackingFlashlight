@@ -22,18 +22,16 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
+    //Intialize variables need to create and manager flash on the camera
     private CameraManager cameraManager;
     private CameraCharacteristics cameraCharacteristics;
-
     private CameraDevice mCameraDevice;
     private CameraCaptureSession mSession;
-
     private CaptureRequest.Builder mBuilder;
-
     private boolean flashState = true;
 
 
-
+    // create the activity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -44,6 +42,11 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    //when toggle button is clicked this function runs
+    // and checks the flashstate, which is either true
+    // or false depending on whether the flash is on or
+    // off. This determined whether the "click" turns
+    // the flash on or off.
     public void click(View v)
     {
         if (flashState) {
@@ -64,6 +67,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    // intialize the camera
     private void initCamera()
     {
         cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
@@ -90,6 +94,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //Creates a camera capture session.
     class MyCameraDeviceStateCallback extends CameraDevice.StateCallback
     {
 
