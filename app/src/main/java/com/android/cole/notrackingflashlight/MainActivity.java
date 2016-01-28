@@ -16,13 +16,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-    //Intialize variables need to create and manager flash on the camera
+    //Initialize variables need to create and manager flash on the camera
     private CameraManager cameraManager;
     private CameraCharacteristics cameraCharacteristics;
     private CameraDevice mCameraDevice;
@@ -38,6 +40,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set up Ads
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+        // Initialize Camera
         initCamera();
 
     }
