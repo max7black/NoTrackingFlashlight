@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         // Set up Ads
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+       // AdView mAdView = (AdView) findViewById(R.id.adView);
+        //AdRequest adRequest = new AdRequest.Builder().build();
+        //mAdView.loadAd(adRequest);
 
 
         // Initialize Camera

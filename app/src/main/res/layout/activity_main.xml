@@ -9,7 +9,7 @@
     tools:context="com.android.cole.notrackingflashlight.MainActivity">
 
     <include layout="@layout/content_main" />
-
+<!--
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="match_parent"
@@ -17,5 +17,5 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id">
     </com.google.android.gms.ads.AdView>
-
+-->
 </android.support.design.widget.CoordinatorLayout>
