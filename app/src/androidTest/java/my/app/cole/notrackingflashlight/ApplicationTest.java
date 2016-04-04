@@ -1,4 +1,4 @@
-package com.android.cole.notrackingflashlight;
+package my.app.cole.notrackingflashlight;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

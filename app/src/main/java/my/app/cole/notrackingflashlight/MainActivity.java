@@ -1,4 +1,25 @@
-package com.android.cole.notrackingflashlight;
+//**********************************************************************
+/*
+Copyright (c) <2016> <MAX Apps>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
+OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+//**************************************************************************************************
+
+package my.app.cole.notrackingflashlight;
 
 import android.Manifest;
 import android.content.Context;
@@ -16,8 +37,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,21 +59,14 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set up Ads
-       // AdView mAdView = (AdView) findViewById(R.id.adView);
-        //AdRequest adRequest = new AdRequest.Builder().build();
-        //mAdView.loadAd(adRequest);
-
-
         // Initialize Camera
         initCamera();
-
     }
 
     //when toggle button is clicked this function runs
     // and checks the flashstate, which is either true
     // or false depending on whether the flash is on or
-    // off. This determined whether the "click" turns
+    // off. This is determined whether the "click" turns
     // the flash on or off.
     public void click(View v)
     {
@@ -73,10 +85,9 @@ public class MainActivity extends AppCompatActivity
                 e.printStackTrace();
             }
         }
-
     }
 
-    // intialize the camera
+    // initialize the camera
     private void initCamera()
     {
         cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
@@ -185,6 +196,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // Turns the flash on the camera on
     public void turnOnFlashLight()
     {
         try
@@ -198,6 +210,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // Turns the flash on the camera off
     public void turnOffFlashLight()
     {
         try
@@ -211,6 +224,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // Closes the camera session
     private void close()
     {
         if (mCameraDevice == null || mSession == null)

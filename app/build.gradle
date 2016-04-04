@@ -5,9 +5,9 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.android.cole.notrackingflashlight"
+        applicationId "my.app.cole.notrackingflashlight"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -29,5 +29,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
-    compile 'com.google.android.gms:play-services-ads:8.4.0'
 }
